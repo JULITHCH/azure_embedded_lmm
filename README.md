@@ -49,12 +49,27 @@ In the following step we need to create an container ("Data storage" -> "Contain
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 20 20" src="https://github.com/user-attachments/assets/00ddfb81-97b0-4749-9ca4-8a8b10421714" />
 
 ### Import Data into Storage Container
+Entering the container you have the possibility to upload content. For our test propose we decide to upload text files. For sure it is possible to import other data-formats as well. Azure is capable of identifying content within pictures as well. In regards to the data size we are limited to 64kb due to the pricing model we will select during the configuration of AI Search furtheron.
 
-## Create an Azure Search Service
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 20 43" src="https://github.com/user-attachments/assets/3434c36b-798b-46de-b37c-b62bbffa9d77" />
+
+
+
+## Create an AI Search
+Next we want to set-up the AI Search. First of all we need to create a corresponding resource.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 23 10" src="https://github.com/user-attachments/assets/aec14bf9-0eb8-42cc-8b0c-85b6f929cf3a" />
+
+After clicking "+ Create" we are asked for the details. 
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 24 59" src="https://github.com/user-attachments/assets/d7315f8e-861a-4eed-889f-d251879e4449" />
+
+Within the selection of the "Pricing Tier" you can differentiate between following models
+![image](https://github.com/user-attachments/assets/39885959-110d-4b8a-b83d-22f552377af9)(Table from: https://learn.microsoft.com/en-us/azure/search/search-sku-tier)
+
 
 
 ## Create an Azure AI Service
 ### Add service to your subscription
+
 ### Configure Service
 ### Append Language Models
 ### Set-up Role-Identity
