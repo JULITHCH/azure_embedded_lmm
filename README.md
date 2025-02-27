@@ -107,9 +107,14 @@ We define "Resource Group" as scope and select the created resource group from a
 We define "Storage" as scope and select the created storage account from above. The role wich needs to be selected is the "Storage Blob Data Reader" role. 
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 53 32" src="https://github.com/user-attachments/assets/57b49f69-291b-4935-8c60-a2974e7b1b97" />
 
-### Conclusion
-After both has been done, it should look like this.
-<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 56 17" src="https://github.com/user-attachments/assets/cc882049-7f7c-4128-9fc9-0431fd081793" />
+### Change Authentication to RBAC
+Within the keys section we have to switch from API-keys to Role-based access control.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 15 22 51" src="https://github.com/user-attachments/assets/72e1856c-69a1-4d2c-a64f-baefa56ce16b" />
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 15 22 56" src="https://github.com/user-attachments/assets/9cbe1682-98c2-4db2-8374-95826c1ae191" />
+
+After the successful switch it should look like this:
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 15 23 04" src="https://github.com/user-attachments/assets/1e6c679a-abce-4bfe-9586-2ad641ed9705" />
+
 
 ## Create an Azure OpenAI Service
 ### Add Azure OpenAI to your subscription
@@ -134,15 +139,25 @@ After clicking "Next" and "Review + create" the service will be created.
 Our resource group should now look like this.
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 11 22" src="https://github.com/user-attachments/assets/f7a9432f-5edd-4bbf-94b7-253d7cf9a495" />
 
-### Set-up Role-Identity
+### Role and role assignments
+#### Step 1: Set-up Role-Identity
 Within the "Resource Management" we can find the possibility of switching to Azure role-based access control (Azure RBAC). The doing is quite the same compared to the AI Search service.
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 13 21" src="https://github.com/user-attachments/assets/d962e0ee-a8e4-49d8-808c-b0cb0e3fc503" />
 
 After having saved the status change from "Off" to "On" we can see the created Azure Object ID.
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 13 52" src="https://github.com/user-attachments/assets/024afdae-53aa-4727-9d9b-9d4c35118094" />
 
-### PERMISSIONS NEED TO BE CLARIFIED
+#### Step 2: Set-up Azure role assignments
+We need to click "Azure role assignments" first.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 15 03 42" src="https://github.com/user-attachments/assets/ff9bba0d-56c7-48e4-b0c0-d914094f1104" />
 
+#### Step 3: Search Service Contributor
+We add within the scope of the resource group the role "Search Service Contributor".
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 15 02 46" src="https://github.com/user-attachments/assets/54ea0842-7776-4a5a-a779-98ac0ef21768" />
+
+#### Step 4: Search Index Data Reader
+We add within the scope of the resource group the role "Search Index Data Reader".
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 15 03 13" src="https://github.com/user-attachments/assets/87e962f7-7f8b-40e1-a2f3-6aacf24457ec" />
 
 ### Azure OpenAI Overview
 By clicking on the OpenAI resource the following window opens.
@@ -223,10 +238,51 @@ The final result should hopefully look like this:
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 35 53" src="https://github.com/user-attachments/assets/7d832574-2247-457e-b018-7a8e4c189df5" />
 
 
+## Configure Azure OpenAI Prompt
+### Add data source
+Before we are able to finally set-up the chat-prompt we need to add our data source within the chat-playground.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 14 53 08" src="https://github.com/user-attachments/assets/d7de535b-c047-4fc5-96e4-352583274db4" />
+
+#### Step 1: Selection of data source
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 14 53 55" src="https://github.com/user-attachments/assets/2b40fbec-7fdc-4b8c-9153-d59efe814c55" />
+
+We select "Azure AI Search" and our "Search Index"
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 14 54 11" src="https://github.com/user-attachments/assets/5b75b315-aad4-4db8-871e-8becd7ac6183" />
+
+We select, that we want to embed the vectorsearch to this search resource and need to select the embedding model.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 14 54 24" src="https://github.com/user-attachments/assets/d7901e5b-813a-43e1-8a22-4256efe7a328" />
+
+#### Step 2: Data managment
+We stay with the hybrid and semantic search type and select the exisiting semantic search configuration.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 14 54 46" src="https://github.com/user-attachments/assets/e96c8c2e-236b-4128-a8e7-f6e355b35f21" />
+
+#### Step 3: Data connection
+We select that we want to use the system managed identity.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 14 54 54" src="https://github.com/user-attachments/assets/c147acfc-932b-414e-922f-d400731da196" />
+
+If you get an error like this, you need to step back once again and set-up the roles correctly.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 14 59 47" src="https://github.com/user-attachments/assets/101af095-88c4-4066-afeb-a4d88eda5566" />
+
+#### Step 4: Review & Create
+We have to review and create the settings.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 15 25 07" src="https://github.com/user-attachments/assets/087a1fc7-01a2-4a2c-ba92-4bf8c282babc" />
+
+#Conclusion
+Now you are able to use the prompt on the right-hand side.
+<img width="1290" alt="Bildschirmfoto 2025-02-27 um 18 07 05" src="https://github.com/user-attachments/assets/f51eabf1-d546-4410-9f4b-28cd0ee2a620" />
 
 
+#Remark
+It could be necessary to add the user to the roles of the "Azure OpenAI" object as well.
+## Assigning role to the asking user
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 17 44 58" src="https://github.com/user-attachments/assets/f51478cc-7ac7-42f9-b796-dea2bf4e6359" />
 
+Select the role.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 17 45 18" src="https://github.com/user-attachments/assets/9cd41ab1-744b-4d28-bd81-c24a5a7d70ae" />
 
+Add the necessary user to the role.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 17 45 36" src="https://github.com/user-attachments/assets/7e374847-109d-4c71-a4f1-c0e395dc0cb4" />
 
-
+And "Review + assign" the role membership.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 17 45 41" src="https://github.com/user-attachments/assets/49f08884-30e5-469f-b429-6c5e9215a28b" />
 
