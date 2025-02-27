@@ -1,6 +1,6 @@
 # How-to use own data within GPT-4 hosted on Azure Webservices
 
-## Howto enrich GPT-4 with own content.
+## Basic Configuration of Azure-Webservices
 
 First of all login to your azure account. 
 
@@ -48,5 +48,17 @@ We go to the storage account by clicking "Go to resource".
 In the following step we need to create an container ("Data storage" -> "Containers"). After clicking "+ Container" we can define the name of the container within the subwindow on the right hand side. 
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 20 20" src="https://github.com/user-attachments/assets/00ddfb81-97b0-4749-9ca4-8a8b10421714" />
 
+### Import Data into Storage Container
+
+## Create an Azure Search Service
+
+
+## Create an Azure AI Service
+### Add service to your subscription
+### Configure Service
+### Append Language Models
+### Set-up Role-Identity
+
+## Vectorize Content for Azure Search
 
 
