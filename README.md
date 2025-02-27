@@ -1,4 +1,5 @@
 # How-to use own data within GPT-4 hosted on Azure Webservices
+27. February 2025, JULITH GmbH, Thomas RIEHN
 ## Overview and Motivation
 Embedding self-managed content into Large Language Models (LLMs) like GPT-4 offers numerous advantages and compelling reasons for its implementation. One key reason is that it allows for the integration of domain-specific knowledge that may not be universally available in the model's original training data. This is particularly beneficial in industries like healthcare, law, or engineering, where specialized information is crucial. By embedding such content, the model can provide more accurate, context-specific, and detailed responses, significantly improving its value in niche applications.
 
