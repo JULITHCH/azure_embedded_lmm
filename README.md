@@ -48,6 +48,14 @@ We go to the storage account by clicking "Go to resource".
 In the following step we need to create an container ("Data storage" -> "Containers"). After clicking "+ Container" we can define the name of the container within the subwindow on the right hand side. 
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 20 20" src="https://github.com/user-attachments/assets/00ddfb81-97b0-4749-9ca4-8a8b10421714" />
 
+### Configure metadata of storage container
+This is an optional step if you want to add some metadata to your data within the storage container. If you want to do so, you have to click on the three points on the right side next to the created storage container and select "Edit metadata" in the context menu.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 57 27" src="https://github.com/user-attachments/assets/caaf3505-5d49-4ff7-8177-ce86a403b310" />
+
+We will add two fields for testing purposes (the documentname and URL) to demonstrate the possibilities.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 59 40" src="https://github.com/user-attachments/assets/92cd9928-1386-4cac-bee7-a6938587685c" />
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 00 49" src="https://github.com/user-attachments/assets/68f7ba77-6452-442a-885e-2bbbe3fa4a8a" />
+
 ### Import Data into Storage Container
 Entering the container you have the possibility to upload content. For our test propose we decide to upload text files. For sure it is possible to import other data-formats as well. Azure is capable of identifying content within pictures as well. In regards to the data size we are limited to 64kb due to the pricing model we will select during the configuration of AI Search furtheron.
 
@@ -57,6 +65,7 @@ After clicking "upload" you can select the files to be uploaded. For demonstrati
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 58 00" src="https://github.com/user-attachments/assets/ac7f8aa2-40b5-418c-8cce-3833b237900d" />
 
 After uploading the overview should look like this.
+<img width="1290" alt="Bildschirmfoto 2025-02-27 um 11 22 12" src="https://github.com/user-attachments/assets/394e2753-e010-4e4e-8676-700c84716fdd" />
 
 
 ## Configuring AI Search Component
@@ -101,15 +110,6 @@ We define "Storage" as scope and select the created storage account from above. 
 ### Conclusion
 After both has been done, it should look like this.
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 56 17" src="https://github.com/user-attachments/assets/cc882049-7f7c-4128-9fc9-0431fd081793" />
-
-## Configure metadata of storage container
-This is an optional step if you want to add some metadata to your data within the storage container. If you want to do so, you have to click on the three points on the right side next to the created storage container and select "Edit metadata" in the context menu.
-<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 57 27" src="https://github.com/user-attachments/assets/caaf3505-5d49-4ff7-8177-ce86a403b310" />
-
-We will add two fields for testing purposes (the documentname and URL) to demonstrate the possibilities.
-<img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 59 40" src="https://github.com/user-attachments/assets/92cd9928-1386-4cac-bee7-a6938587685c" />
-<img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 00 49" src="https://github.com/user-attachments/assets/68f7ba77-6452-442a-885e-2bbbe3fa4a8a" />
-
 
 ## Create an Azure OpenAI Service
 ### Add Azure OpenAI to your subscription
@@ -177,5 +177,56 @@ After having found, we can deploy this language model.
 
 
 ## Vectorize Content for Azure Search
+We switch back again into the created search service within our created resource group and click on "Import and vectorize data".
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 22 35" src="https://github.com/user-attachments/assets/e934afc2-b2a7-47fd-bd71-dab8f034431f" />
+
+### Step 1: Data connection
+In the first step we need to set-up our data connection (Azure Blob Storage in our case).
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 22 44" src="https://github.com/user-attachments/assets/0ab95ea5-2abf-4893-81bf-0e3133645eed" />
+
+Within this step it is necessary to select the authentication using a system-assigned managed identity.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 22 59" src="https://github.com/user-attachments/assets/d0344ee5-06b6-49e9-af71-8aed1141cd94" />
+
+### Step 2: Vectorization model
+In the next step it is necessary to select the OpenAI Service and the deployed text-embedding model. 
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 23 24" src="https://github.com/user-attachments/assets/628c28c5-5219-4ee1-92b4-d4e8da74ae07" />
+
+### Step 3: Vectorization of images
+In our test-case we leave this blank.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 23 31" src="https://github.com/user-attachments/assets/98dee971-1c8e-4ac3-9296-666e2b1fd12a" />
+
+### Step 4: Advanced Settings
+We highly recommend to enable the semantic ranker and leave the schedule for indexing by once.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 23 53" src="https://github.com/user-attachments/assets/619cf391-5247-4995-9bd6-90f343787dbe" />
+
+### Step 5: Review and create
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 23 57" src="https://github.com/user-attachments/assets/24daeaeb-0491-4f76-b13a-9bc19e2243c3" />
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 09" src="https://github.com/user-attachments/assets/fdc2ded9-08a6-4e9c-985b-eb0fe3a1a9d9" />
+
+After clicking start-searching you reach the vector.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 14" src="https://github.com/user-attachments/assets/6eed5fb7-ff0f-42ef-813f-c7b0d7c64117" />
+
+Within that final process the index
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 26" src="https://github.com/user-attachments/assets/2529af12-d36a-49ed-b60c-84b2be4c50e7" />
+
+the indexers
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 22" src="https://github.com/user-attachments/assets/2d8c6bbc-4be7-4777-8db5-504c0fe59480" 
+
+and the skillset
+<img width="1290" alt="Bildschirmfoto 2025-02-27 um 11 24 35" src="https://github.com/user-attachments/assets/18819308-22e6-44f1-96d2-a83a2fafdf6b" />
+has been generated.
+
+During the indexing process you can see the progress like this:
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 44" src="https://github.com/user-attachments/assets/ea2f90ae-f964-4caf-bea0-92e2b53d733a" />
+
+The final result should hopefully look like this:
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 35 53" src="https://github.com/user-attachments/assets/7d832574-2247-457e-b018-7a8e4c189df5" />
+
+
+
+
+
+
+
 
 
