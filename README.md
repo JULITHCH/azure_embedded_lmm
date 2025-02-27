@@ -1,4 +1,4 @@
-# azure_lmm
+# How-to use own data within GPT-4 hosted on Azure Webservices
 
 ## Howto enrich GPT-4 with own content.
 
