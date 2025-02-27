@@ -53,6 +53,10 @@ Entering the container you have the possibility to upload content. For our test 
 
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 09 20 43" src="https://github.com/user-attachments/assets/3434c36b-798b-46de-b37c-b62bbffa9d77" />
 
+After clicking "upload" you can select the files to be uploaded. For demonstration purposes we selected "Cool" as Access tier.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 58 00" src="https://github.com/user-attachments/assets/ac7f8aa2-40b5-418c-8cce-3833b237900d" />
+
+After uploading the overview should look like this.
 
 
 ## Configuring AI Search Component
@@ -130,6 +134,16 @@ After clicking "Next" and "Review + create" the service will be created.
 Our resource group should now look like this.
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 11 22" src="https://github.com/user-attachments/assets/f7a9432f-5edd-4bbf-94b7-253d7cf9a495" />
 
+### Set-up Role-Identity
+Within the "Resource Management" we can find the possibility of switching to Azure role-based access control (Azure RBAC). The doing is quite the same compared to the AI Search service.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 13 21" src="https://github.com/user-attachments/assets/d962e0ee-a8e4-49d8-808c-b0cb0e3fc503" />
+
+After having saved the status change from "Off" to "On" we can see the created Azure Object ID.
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 13 52" src="https://github.com/user-attachments/assets/024afdae-53aa-4727-9d9b-9d4c35118094" />
+
+### PERMISSIONS NEED TO BE CLARIFIED
+
+
 ### Azure OpenAI Overview
 By clicking on the OpenAI resource the following window opens.
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 11 32" src="https://github.com/user-attachments/assets/3853b65b-9b6d-46d6-87c3-ffd79e8fd91e" />
@@ -158,10 +172,9 @@ After having found, we can deploy this language model.
 
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 10 12 57" src="https://github.com/user-attachments/assets/38372cdb-50df-4a87-a46b-17379a302e2e" />
 
+## Import data into the 
 
 
-
-### Set-up Role-Identity
 
 ## Vectorize Content for Azure Search
 
