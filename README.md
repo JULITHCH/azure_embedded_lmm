@@ -210,7 +210,7 @@ Within that final process the index
 <img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 26" src="https://github.com/user-attachments/assets/2529af12-d36a-49ed-b60c-84b2be4c50e7" />
 
 the indexers
-<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 22" src="https://github.com/user-attachments/assets/2d8c6bbc-4be7-4777-8db5-504c0fe59480" 
+<img width="1334" alt="Bildschirmfoto 2025-02-27 um 11 24 22" src="https://github.com/user-attachments/assets/2d8c6bbc-4be7-4777-8db5-504c0fe59480" />
 
 and the skillset
 <img width="1290" alt="Bildschirmfoto 2025-02-27 um 11 24 35" src="https://github.com/user-attachments/assets/18819308-22e6-44f1-96d2-a83a2fafdf6b" />
