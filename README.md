@@ -32,7 +32,7 @@ Furthermore, Azure offers **advanced monitoring and management tools** that help
 In summary, Azure OpenAI Services provide a comprehensive and flexible platform for embedding self-managed content into models like GPT-4. The advantages include customization for domain-specific knowledge, scalability to handle large data volumes, strong security and compliance features, seamless integration with existing Azure services, the ability for continuous updates, and advanced monitoring tools—all of which contribute to making the process of embedding self-managed content highly effective and secure for organizations.
 
 ### Getting started
-First of all login to your azure account. 
+In the following example we want to embed text documents. Therefore it is necessary to make use of several Azure services. But: first of all login to your azure account ;)
 
 <img width="1290" alt="Bildschirmfoto 2025-02-27 um 08 55 44" src="https://github.com/user-attachments/assets/99b12ebe-9098-4ac1-b743-36e97001910c" />
 
